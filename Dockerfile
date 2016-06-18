@@ -21,7 +21,7 @@ ENV SERVER_WORK_DIR /var/lib/go-server/workdir
 RUN rm -rf /etc/go
 RUN mkdir -p /var/lib/go-server/workdir
 RUN cp -a /usr/share/go-server /var/lib/go-server
-RUN chown -R /var/lib/go-server
+RUN chown -R go:go /var/lib/go-server
 
 # Download some usefull plugins
 COPY assets/install-plugin.sh /app/
