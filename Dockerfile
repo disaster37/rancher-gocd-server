@@ -2,6 +2,7 @@ FROM quay.io/webcenter/rancher-base-image:latest
 MAINTAINER Sebastien LANGOUREAUX (linuxworkgroup@hotmail.com)
 
 
+
 RUN apt-get update &&\
     apt-get install -y apt-transport-https
 

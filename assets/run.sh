@@ -1,6 +1,4 @@
 #!/bin/sh
-
-
 python /app/init.py
 
-exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+exec /var/lib/go-server/server.sh
