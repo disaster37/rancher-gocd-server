@@ -1,6 +1,6 @@
 #!/bin/bash
-mkdir -p /var/lib/gocd/workdir/plugins/external
-cd /var/lib/gocd/workdir/plugins/external
+mkdir -p /app/plugins/
+cd /app/plugins/
 
 echo "Install go-maven-poller"
 curl -O https://github.com/aresok/go-maven-poller/releases/download/v0.3.2/go-maven-poller.jar
