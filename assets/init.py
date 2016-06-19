@@ -19,8 +19,8 @@ class ServiceRun():
           os.system('mkdir -p ' + GOCD_PATH + '/workdir/plugins/external')
 
       if len(os.listdir(GOCD_PATH + '/workdir')) < 3:
-          os.system('mv /app/plugins/* ' + GOCD_PATH + '/workdir/plugins/external/')
-          os.system('cp -a /usr/share/go-server ' + GOCD_PATH)
+          os.system('cp -a /app/plugins/* ' + GOCD_PATH + '/workdir/plugins/external/')
+          os.system('cp -a /usr/share/go-server/* ' + GOCD_PATH)
           os.system('chown -R go:go ' + GOCD_PATH)
 
 
