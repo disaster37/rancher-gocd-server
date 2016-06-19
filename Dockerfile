@@ -10,7 +10,10 @@ RUN apt-get update &&\
 RUN echo "deb https://download.go.cd /" | sudo tee /etc/apt/sources.list.d/gocd.list &&\
     curl https://download.go.cd/GOCD-GPG-KEY.asc | sudo apt-key add - &&\
     apt-get update &&\
-    apt-get install -y go-server apache2-utils
+    apt-get install -y go-server apache2-utils openjdk-8-jre-headless
+
+# CLEAN APT
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Fix some settings
 ENV MANUAL_SETTING Y
