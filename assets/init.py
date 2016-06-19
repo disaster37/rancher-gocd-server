@@ -15,15 +15,12 @@ class ServiceRun():
   def init_data_folder(self):
       global GOCD_PATH
 
-      if len(os.listdir(GOCD_PATH + '/wordir')) < 3:
+      if os.path.isdir(GOCD_PATH + '/workdir/plugins/external') is False:
+          os.system('mkdir -p ' + GOCD_PATH + '/workdir/plugins/external')
+
+      if len(os.listdir(GOCD_PATH + '/workdir')) < 3:
           os.system('mv /app/plugins/* ' + GOCD_PATH + '/workdir/plugins/external/')
-          os.system('/app/install-plugin.sh')
-
-
-
-
-
-
+          os.system('chown -R go:go ' + GOCD_PATH)
 
 
 if __name__ == '__main__':

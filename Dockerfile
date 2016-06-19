@@ -30,7 +30,11 @@ RUN chmod +x /app/install-plugin.sh
 RUN /app/install-plugin.sh
 
 COPY assets/init.py /app/init.py
+COPY asets/run.sh /app/run.sh
+RUN chmod +x /app/run.sh
 
 EXPOSE 8153
 EXPOSE 8154
 VOLUME /var/lib/go-server
+
+CMD /app/run.sh
